@@ -1,0 +1,47 @@
+﻿@model Book
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateBook</h2>
+
+<form method="post" action="/Home/UpdateBook">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <td align="center"><strong><label for="Title">Title:</label></strong></td>
+            <td>
+                <input type="text" name="Title" value="@Model.Title" />
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center"><strong><label for="AuthorFirstName">Author First Name:</label></strong></td>
+            <td>
+                <input type="text" name="AuthorFirstName" value="@Model.AuthorFirstName" />
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center"><strong><label for="AuthorLastName">Author Last Name:</label></strong></td>
+            <td>
+                <input type="text" name="AuthorLastName" value="@Model.AuthorLastName" />
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center"><strong><label for="Copyright">Copyright:</label></strong></td>
+            <td>
+                <input type="number" min="1900" max="2017" name="Copyright" value="@Model.Copyright"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create Book" /> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/Home/Index">Cancel</a>
+            </td>
+        </tr>
+
+    </table>
+</form>
